@@ -12,5 +12,15 @@ import { addContact, deleteContact } from "./contacts-types";
 
 const actionAddContacts = createAction(addContact);
 const actionDeleteContacts = createAction(deleteContact);
+const actionTest = createAction(type.TEST, (text) => {
+  return {
+    payload: {
+      text,
+      completed: false,
+    },
+  };
+});
 
-export { actionAddContacts, actionDeleteContacts };
+console.log("actionTest", actionTest("Hello"));
+
+export { actionAddContacts, actionDeleteContacts, actionTest };
